@@ -2,7 +2,7 @@
 This is used to deploy React Web components on the cloud. This container is based on the `bitnami/nginx` Docker image. It adds support for passing server configurations to the React applications by injecting the variables to `__REACT_SERVER_CONFIG__` placeholder in the index.html file.
 
 #### Versions
-Current latest version of this image is 1.0.0 which uses BitNami Nginx 1.18.
+Current latest version of this image is 1.0.0 which uses Bitnami Nginx 1.18.
 
 #### Usage
 In your `public/index.html` file, have the following code block.
