@@ -26,7 +26,7 @@ server {
         add_header Cache-Control "public";
     }
 
-    # 
+    # add cache policy for service-worker.js
   location /service-worker.js {
       expires 0;
       add_header Cache-Control "no-store, no-cache, must-revalidate";
