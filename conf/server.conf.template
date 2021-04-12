@@ -11,24 +11,23 @@ server {
       add_header Cache-Control "no-store, no-cache, must-revalidate";
   }
 
+  location = /service_worker.js {
+      expires 0;
+      add_header Cache-Control "no-store, no-cache, must-revalidate";
+  }
+
     # Media: images, icons, video, audio, HTC
-    location ~* \.(?:jpg|jpeg|gif|png|ico|cur|gz|svg|svgz|mp4|ogg|ogv|webm|htc)$ {
+  location ~* \.(?:jpg|jpeg|gif|png|ico|cur|gz|svg|svgz|mp4|ogg|ogv|webm|htc)$ {
       expires max;
       access_log off;
       add_header Cache-Control "public";
-    }
+  }
 
     # Javascript, CSS and Font files
-    location ~* \.(?:css|js|woff|woff2|ttf|otf)$ {
-        try_files $uri =404;
-        expires max;
-        access_log off;
-        add_header Cache-Control "public";
-    }
-
-    # add cache policy for service-worker.js
-  location /service-worker.js {
-      expires 0;
-      add_header Cache-Control "no-store, no-cache, must-revalidate";
+  location ~* \.(?:css|js|woff|woff2|ttf|otf)$ {
+      try_files $uri =404;
+      expires max;
+      access_log off;
+      add_header Cache-Control "public";
   }
 }
